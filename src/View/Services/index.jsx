@@ -7,7 +7,7 @@ import React from 'react';
 export default function Services() {
   return (
     <Box>
-      <Typography variant="h3" textAlign="center" mt={5}>
+      <Typography variant="h3" sx={{fontWeight:"bold"}} textAlign="center" mt={5}>
         SERVICES
       </Typography>
       <Box 

@@ -15,7 +15,7 @@ export default function About() {
                 flexGrow: 1,
               }}
             >
-              <Typography variant='h4' textAlign="left" mb={1} ml={5} sx={{ lineHeight: 1.5 }}>
+              <Typography variant='h4' textAlign="left" mb={1} ml={5} sx={{ lineHeight: 1.5  , fontWeight:"bold"}}>
                 ABOUT
               </Typography>
               <Box
@@ -45,8 +45,8 @@ export default function About() {
             />
           </Grid>
         </Grid>
-      </Box>
       <Counter/>
+      </Box>
     </>
   );
 }
