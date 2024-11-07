@@ -9,9 +9,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['HOME', 'SERVICES', 'ABOUT', 'PROJECTS', 'CONTACT'];
+const pages = [
+  { label: 'HOME', id: 'home' },
+  { label: 'SERVICES', id: 'services' },
+  { label: 'ABOUT', id: 'about' },
+  { label: 'PROJECTS', id: 'projects' },
+  { label: 'CONTACT', id: 'contact' },
+];
+
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -23,6 +30,15 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      handleCloseNavMenu();
+    }
+  };
+  
 
   return (
     <AppBar position="static" sx={{ background: "#1e2d3b", position: "fixed" }}>
@@ -40,7 +56,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: '#edcd1f',
               textDecoration: 'none',
-              flexDirection: 'column'
+              flexDirection: 'column',
             }}
           >
             SPHERE CONSTRUCTIONS
@@ -75,18 +91,16 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem
-                  key={page}
-                  onClick={handleCloseNavMenu}
+                  key={page.id}
+                  onClick={() => handleScroll(page.id)}
                   sx={{ display: 'flex', justifyContent: 'flex-end' }}
                 >
-                  <Typography>{page}</Typography>
+                  <Typography>{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -98,28 +112,29 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: '#edcd1f',
               textDecoration: 'none',
             }}
           >
-            LOGO
+             SPHERE CONSTRUCTIONS
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.id}
+                onClick={() => handleScroll(page.id)}
                 sx={{
                   my: 3,
-                  color: page === 'HOME' ? '#edcd1f' : 'white',
+                  color: page.label === 'HOME' ? '#edcd1f' : 'white',
                   display: 'block',
+                  mx: 1,
                   '&:hover': {
                     color: '#edcd1f',
                   }
                 }}
               >
-                {page}
+                {page.label}
               </Button>
             ))}
           </Box>

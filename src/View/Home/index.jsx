@@ -1,4 +1,4 @@
-// Home.js
+
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import video from '../../assats/2818546-uhd_3840_2160_24fps.mp4';
@@ -8,7 +8,9 @@ export default function Home() {
 
   return (
     <>
-      <Box
+    <section id='home'>
+
+      <Box 
         sx={{
           position: 'relative',
           height: '100vh',
@@ -49,6 +51,7 @@ export default function Home() {
           INFRASTRUCTURE
         </Typography>
       </Box>
+    </section>
     </>
   );
 }
