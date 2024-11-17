@@ -1,7 +1,7 @@
 
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import video from '../../assats/2818546-uhd_3840_2160_24fps.mp4';
+import {HomeImage} from '../../assets';
 
 
 export default function Home() {
@@ -35,14 +35,17 @@ export default function Home() {
             zIndex: -1,
           }}
         >
-          <source src={video} type="video/mp4" />
+          <source src={HomeImage} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         <Typography
           variant="h1"
           textAlign="center"
-          sx={{ fontSize: '60px', color: 'white', zIndex: -1 }}
+          sx={{ color: 'white', zIndex: -1
+            ,  fontSize: { xs: '40px', sm: '50px', md: '60px' },
+           }}
+          
         >
           LEADERS IN QUALITY
           <br />

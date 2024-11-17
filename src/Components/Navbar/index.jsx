@@ -4,11 +4,10 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import { Container, useTheme } from '@mui/material';
+import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const pages = [
   { label: 'HOME', id: 'home' },
@@ -18,31 +17,32 @@ const pages = [
   { label: 'CONTACT', id: 'contact' },
 ];
 
-
-
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenDrawer = () => {
+    setDrawerOpen(true);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseDrawer = () => {
+    setDrawerOpen(false);
   };
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      handleCloseNavMenu();
+      setDrawerOpen(false); 
     }
   };
-  
+
+  const theme = useTheme();
 
   return (
-    <AppBar position="static" sx={{ background: "#1e2d3b", position: "fixed" }}>
-      <Container maxWidth="xl">
+    <AppBar sx={{ background: theme.palette.primary.main, position: 'fixed' }}>
+       <Container maxWidth="xl">
+
+      <Box sx={{ flexGrow: 1 }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -51,54 +51,28 @@ function ResponsiveAppBar() {
             href="#app-bar-with-responsive-menu"
             sx={{
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              // fontFamily: 'monospace',
+              fontFamily: theme.typography.fontFamily,
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: '#edcd1f',
+              color: theme.palette.secondary.main,
               textDecoration: 'none',
-              flexDirection: 'column',
+
             }}
           >
             SPHERE CONSTRUCTIONS
           </Typography>
 
+         
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              aria-label="menu"
+              onClick={handleOpenDrawer}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
-            >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.id}
-                  onClick={() => handleScroll(page.id)}
-                  sx={{ display: 'flex', justifyContent: 'flex-end' }}
-                >
-                  <Typography>{page.label}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
 
           <Typography
@@ -112,12 +86,54 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: '#edcd1f',
+              color: theme.palette.secondary.main,
               textDecoration: 'none',
+              fontSize: { xs: '17px' }
             }}
           >
              SPHERE CONSTRUCTIONS
           </Typography>
+          <Drawer
+            anchor="left"
+            open={drawerOpen}
+            onClose={handleCloseDrawer}
+            sx={{
+              '& .MuiDrawer-paper': {
+                width: '100%', 
+                height: '100%',
+                backgroundColor: theme.palette.primary.main,
+                color: theme.palette.secondary.main,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+
+              },
+            }}
+          >
+            
+            <Button onClick={handleCloseDrawer} sx={{ color: 'white', alignSelf: 'flex-end', m: 2 }}>
+              Close
+            </Button>
+
+          
+            {pages.map((page) => (
+              <Button
+                key={page.id}
+                onClick={() => handleScroll(page.id)}
+                sx={{
+                  color: page.label === 'HOME' ? theme.palette.secondary.main : 'white',
+                  my: 2,
+                  fontSize: '20px',
+                  textTransform: 'capitalize',
+                  '&:hover': {
+                    color: theme.palette.secondary.main,
+                  },
+                }}
+              >
+                {page.label}
+              </Button>
+            ))}
+          </Drawer>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page) => (
@@ -126,21 +142,21 @@ function ResponsiveAppBar() {
                 onClick={() => handleScroll(page.id)}
                 sx={{
                   my: 3,
-                  color: page.label === 'HOME' ? '#edcd1f' : 'white',
+                  color: page.label === 'HOME' ? theme.palette.secondary.main : 'white',
                   display: 'block',
                   mx: 1,
                   '&:hover': {
-                    color: '#edcd1f',
-                  }
+                    color: theme.palette.secondary.main,
+                  },
                 }}
               >
                 {page.label}
               </Button>
             ))}
           </Box>
-
         </Toolbar>
-      </Container>
+      </Box>
+       </Container>
     </AppBar>
   );
 }

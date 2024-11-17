@@ -1,0 +1,18 @@
+export {default as HomeImage} from '../assets/home.mp4'
+export {default as AboutImage} from '../assets/about-section.webp'
+export {default as ServicesImage1} from '../assets/services-section.webp'
+export {default as ServicesImage2} from '../assets/services-section2.webp'
+export {default as ServicesImage3} from '../assets/services-section3.webp'
+export {default as ProjectImage} from '../assets/project-section.webp'
+export {default as ClientImage1} from '../assets/ClientsIamge/clients1.webp'
+export {default as ClientImage2} from '../assets/ClientsIamge/Clients2.webp'
+export {default as ClientImage3} from '../assets/ClientsIamge/clients3.webp'
+export {default as ClientImage4} from '../assets/ClientsIamge/clients4.webp'
+export {default as ClientImage5} from '../assets/ClientsIamge/clients5.webp'
+export {default as ClientImageHover1} from '../assets/ClientsIamge/hoverClients1.webp'
+export {default as ClientImageHover2} from '../assets/ClientsIamge/hoverClient2.webp'
+export {default as ClientImageHover3} from '../assets/ClientsIamge/hoverClients3.webp'
+export {default as ClientImageHover4} from '../assets/ClientsIamge/hoverClients4.webp'
+export {default as ClientImageHover5} from '../assets/ClientsIamge/hoverClients5.webp'
+
+

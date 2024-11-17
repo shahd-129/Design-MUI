@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <>
       <section id="contact">
-        <Box sx={{ margin: '5', padding: '20px' }} position={'relative'} zIndex={-1}>
+        <Box sx={{ margin: '5', padding: '20px' }} position={'relative'}>
           <Typography variant="h3" align="center" sx={{ color: 'inherit', fontWeight: 'bold', margin: 2 }}>
             Contact
           </Typography>
@@ -35,7 +35,6 @@ export default function Contact() {
               margin: '1rem auto',
             }}
           />
-
 
           <Grid container spacing={5} padding={5} justifyContent="center">
             <Grid item xs={12} sm={6} md={5}>
@@ -68,7 +67,10 @@ export default function Contact() {
                   variant="outlined"
                   size="small"
                   onBlur={() => handleBlur('firstName')}
-                  sx={{ background: '#F7F7F7', width: '75%' }}
+                  sx={{
+                    background: '#F7F7F7',
+                    width: { xs: '100%', sm: '100%', md: '75%' }, 
+                  }}
                   helperText={warnings.firstName}
                   error={!!warnings.firstName}
                 />
@@ -78,7 +80,10 @@ export default function Contact() {
                   variant="outlined"
                   size="small"
                   onBlur={() => handleBlur('lastName')}
-                  sx={{ background: '#F7F7F7', width: '75%' }}
+                  sx={{
+                    background: '#F7F7F7',
+                    width: { xs: '100%', sm: '100%', md: '75%' },
+                  }}
                   helperText={warnings.lastName}
                   error={!!warnings.lastName}
                 />
@@ -88,7 +93,10 @@ export default function Contact() {
                   variant="outlined"
                   onBlur={() => handleBlur('email')}
                   size="small"
-                  sx={{ background: '#F7F7F7', width: '75%' }}
+                  sx={{
+                    background: '#F7F7F7',
+                    width: { xs: '100%', sm: '100%', md: '75%' },
+                  }}
                   helperText={warnings.email}
                   error={!!warnings.email}
                 />
@@ -98,7 +106,10 @@ export default function Contact() {
                   variant="outlined"
                   size="small"
                   onBlur={() => handleBlur('subject')}
-                  sx={{ background: '#F7F7F7', width: '75%' }}
+                  sx={{
+                    background: '#F7F7F7',
+                    width: { xs: '100%', sm: '100%', md: '75%' },
+                  }}
                   helperText={warnings.subject}
                   error={!!warnings.subject}
                 />
@@ -109,7 +120,10 @@ export default function Contact() {
                   rows={4}
                   variant="outlined"
                   onBlur={() => handleBlur('message')}
-                  sx={{ background: '#F7F7F7', width: '75%' }}
+                  sx={{
+                    background: '#F7F7F7',
+                    width: { xs: '100%', sm: '100%', md: '75%' },
+                  }}
                   helperText={warnings.message}
                   error={!!warnings.message}
                 />
@@ -132,7 +146,6 @@ export default function Contact() {
                 </Button>
               </Box>
             </Grid>
-
 
             <Grid item xs={12} sm={6} md={5}>
               <Typography variant="h4" sx={{ fontWeight: '600', fontSize: '25px', fontFamily: 'sans-serif', marginBottom: 1 }}>

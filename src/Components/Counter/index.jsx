@@ -1,25 +1,37 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography, useTheme } from '@mui/material';
 import React from 'react';
 
 export default function Counter() {
+ const theme = useTheme()
   return (
     <>
+     <Box
+        sx={{
+          height: '30px', 
+          background: theme.palette.primary.main,
+          width: '100%',
+          marginBottom: '0.1rem', 
+          display: { xs: 'block', sm: 'block', md: 'none' }, 
+        }}
+      />
       <Box
         sx={{
           background: "#edcd1f",
           position: 'relative',
-          padding: "5",
           width: '100%',       
           height: '30vh',       
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          zIndex:-1
+          zIndex:-1,
+          padding: { xs: '0.5rem', sm: '3rem', md: '5rem' },
+          // pt:{xs:"2rem"},
+          // pb:{xs:"0.1rem"}
         }}
       >
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-            <Typography variant='h3' align="center" sx={{ color: "#3D5975", fontWeight: "bold" }}>
+          <Grid item xs={6} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+            <Typography variant='h3' align="center" sx={{ color: theme.palette.typography.colorTypography, fontWeight: "bold" }}>
               2035
               <Typography variant='subtitle1' sx={{ fontWeight: "bold", lineHeight: "1.3em" }} align="center">
                 Year Established
@@ -27,8 +39,8 @@ export default function Counter() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-            <Typography variant='h3' align="center" sx={{ color: "#3D5975", fontWeight: "bold" }}>
+          <Grid item xs={6} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+            <Typography variant='h3' align="center" sx={{  color: theme.palette.typography.colorTypography, fontWeight: "bold" }}>
               206
               <Typography variant='subtitle1' sx={{ fontWeight: "bold" }} align="center">
                 Projects Completed
@@ -36,8 +48,8 @@ export default function Counter() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-            <Typography variant='h3' align="center" sx={{ color: "#3D5975", fontWeight: "bold" }}>
+          <Grid item xs={6} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+            <Typography variant='h3' align="center" sx={{  color: theme.palette.typography.colorTypography, fontWeight: "bold" }}>
               870
               <Typography variant='subtitle1' sx={{ fontWeight: "bold" }} align="center">
                 Contractors Appointed
@@ -45,8 +57,8 @@ export default function Counter() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
-            <Typography variant='h3' align="center" sx={{ color: "#3D5975", fontWeight: "bold" }}>
+          <Grid item xs={6} sm={6} md={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
+            <Typography variant='h3' align="center" sx={{ color: theme.palette.typography.colorTypography, fontWeight: "bold" }}>
               26
               <Typography variant='subtitle1' sx={{ fontWeight: "bold" }} align="center">
                 Awards Won
