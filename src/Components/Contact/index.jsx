@@ -33,11 +33,14 @@ export default function Contact() {
               width: '100px',
               backgroundColor: '#edcd1f',
               margin: '1rem auto',
+
             }}
           />
 
-          <Grid container spacing={5} padding={5} justifyContent="center">
-            <Grid item xs={12} sm={6} md={5}>
+          <Grid container spacing={5} padding={5} sx={{
+            padding: { xs: 0, sm: 3, md: 5 },
+          }} justifyContent="center">
+            <Grid item xs={12} sm={6} md={5}  >
               <Typography variant="h4" sx={{ fontWeight: '600', fontSize: '25px', fontFamily: 'sans-serif', marginBottom: 1 }}>
                 Inquiries
               </Typography>
@@ -51,100 +54,105 @@ export default function Contact() {
               >
                 For any inquiries, questions or commendations, please call: 123-456-7890 or fill out the following form
               </Typography>
+              <Box >
 
-              <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
-                Contact Us
-              </Typography>
-
-              <Box
-                component="form"
-                sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-                noValidate
-                autoComplete="off"
-              >
-                <Typography>First Name</Typography>
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  onBlur={() => handleBlur('firstName')}
-                  sx={{
-                    background: '#F7F7F7',
-                    width: { xs: '100%', sm: '100%', md: '75%' }, 
-                  }}
-                  helperText={warnings.firstName}
-                  error={!!warnings.firstName}
-                />
-
-                <Typography marginTop={1}>Last Name</Typography>
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  onBlur={() => handleBlur('lastName')}
-                  sx={{
-                    background: '#F7F7F7',
-                    width: { xs: '100%', sm: '100%', md: '75%' },
-                  }}
-                  helperText={warnings.lastName}
-                  error={!!warnings.lastName}
-                />
-
-                <Typography>Email</Typography>
-                <TextField
-                  variant="outlined"
-                  onBlur={() => handleBlur('email')}
-                  size="small"
-                  sx={{
-                    background: '#F7F7F7',
-                    width: { xs: '100%', sm: '100%', md: '75%' },
-                  }}
-                  helperText={warnings.email}
-                  error={!!warnings.email}
-                />
-
-                <Typography>Subject</Typography>
-                <TextField
-                  variant="outlined"
-                  size="small"
-                  onBlur={() => handleBlur('subject')}
-                  sx={{
-                    background: '#F7F7F7',
-                    width: { xs: '100%', sm: '100%', md: '75%' },
-                  }}
-                  helperText={warnings.subject}
-                  error={!!warnings.subject}
-                />
-
-                <Typography>Message</Typography>
-                <TextField
-                  multiline
-                  rows={4}
-                  variant="outlined"
-                  onBlur={() => handleBlur('message')}
-                  sx={{
-                    background: '#F7F7F7',
-                    width: { xs: '100%', sm: '100%', md: '75%' },
-                  }}
-                  helperText={warnings.message}
-                  error={!!warnings.message}
-                />
-
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    color: '#EDCD1F',
-                    backgroundColor: '#3B3A3A',
-                    width: '150px',
-                    padding: '1rem auto',
-                    '&:hover': {
-                      backgroundColor: '#EDCD1F',
-                      color: '#3B3A3A',
-                    },
-                  }}
+                <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
+                  Contact Us
+                </Typography>
+                <Box
+                  component="form"
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
+                  noValidate
+                  autoComplete="off"
                 >
-                  Submit
-                </Button>
+                  <Typography>First Name</Typography>
+                  <TextField
+                    variant="outlined"
+                    size="small"
+                    onBlur={() => handleBlur('firstName')}
+                    sx={{
+                      background: '#F7F7F7',
+                      width: { xs: '100%', sm: '100%', md: '75%' },
+                    }}
+                    helperText={warnings.firstName}
+                    error={!!warnings.firstName}
+                  />
+
+                  <Typography marginTop={1}>Last Name</Typography>
+                  <TextField
+                    variant="outlined"
+                    size="small"
+                    onBlur={() => handleBlur('lastName')}
+                    sx={{
+                      background: '#F7F7F7',
+                      width: { xs: '100%', sm: '100%', md: '75%' },
+                    }}
+                    helperText={warnings.lastName}
+                    error={!!warnings.lastName}
+                  />
+
+                  <Typography>Email</Typography>
+                  <TextField
+                    variant="outlined"
+                    onBlur={() => handleBlur('email')}
+                    size="small"
+                    sx={{
+                      background: '#F7F7F7',
+                      width: { xs: '100%', sm: '100%', md: '75%' },
+                    }}
+                    helperText={warnings.email}
+                    error={!!warnings.email}
+                  />
+
+                  <Typography>Subject</Typography>
+                  <TextField
+                    variant="outlined"
+                    size="small"
+                    onBlur={() => handleBlur('subject')}
+                    sx={{
+                      background: '#F7F7F7',
+                      width: { xs: '100%', sm: '100%', md: '75%' },
+                    }}
+                    helperText={warnings.subject}
+                    error={!!warnings.subject}
+                  />
+
+                  <Typography>Message</Typography>
+                  <TextField
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                    onBlur={() => handleBlur('message')}
+                    sx={{
+                      background: '#F7F7F7',
+                      width: { xs: '100%', sm: '100%', md: '75%' },
+                    }}
+                    helperText={warnings.message}
+                    error={!!warnings.message}
+                  />
+
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{
+                      color: '#EDCD1F',
+                      backgroundColor: '#3B3A3A',
+                      width: '150px',
+                      padding: '1rem auto',
+                      '&:hover': {
+                        backgroundColor: '#EDCD1F',
+                        color: '#3B3A3A',
+                      },
+                    }}
+                  >
+                    Submit
+                  </Button>
+                  <Typography sx={{marginTop:"5rem" , color:"#3b3a3a"}}>
+                  © 2035 by Sphere Constructions. Powered and secured by Wix
+                  </Typography>
+                </Box>
               </Box>
+
             </Grid>
 
             <Grid item xs={12} sm={6} md={5}>
@@ -163,7 +171,7 @@ export default function Contact() {
                 <br />
                 Fax: 123-456-7890
               </Typography>
-              <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 5 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom:{md:"5" , xs:"2"} }}>
                 Employment
               </Typography>
               <Typography variant="body2" sx={{ marginBottom: 2, color: '#3b3a3a' }}>
@@ -179,7 +187,7 @@ export default function Contact() {
               />
               <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Get a quote: 123-456-7890</Typography>
 
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem auto', marginTop: '1rem' }}>
+              <Box sx={{ display: 'flex', justifyContent: {xs:"left", md:'center'} , alignItems: 'center', padding:'2rem auto', marginTop: '1rem' }}>
                 <FacebookRoundedIcon sx={{ width: 35, height: 35, borderRadius: '50%', marginRight: '1rem' }} />
                 <Avatar sx={{ width: 30, height: 30, borderRadius: '50%', background: 'black', color: 'white' }}>
                   <LinkedInIcon />

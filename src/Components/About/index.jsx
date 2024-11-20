@@ -24,30 +24,19 @@ export default function About() {
                 objectPosition: '50% 50%',
               }}
             >
-              {/* <Typography 
-                variant='h3' 
-                textAlign="left" 
-                mb={2} 
-                // ml={{ xs: 3, sm: 5 }}
-                ml={{xs:3 , sm :5 , md:5}}
-                sx={{
-                  lineHeight: 1.5,
-                  letterSpacing: '0.05em',
-                  fontWeight: "bold",
-                }}
-              >
-                ABOUT
-              </Typography> */}
               <Typography variant='h3' textAlign="left" mb={1} ml={5}
                 sx={{
                   lineHeight: 1.5,
                   letterSpacing: '0.05em',
-                  fontWeight: "bold"
+                  fontWeight: "bold",
+                  ml:{ xs: "2rem" , md:"6.4rem"},
+                  textAlign: { xs: "left", sm: "center", md: "left" },
                 }}>
                 ABOUT
               </Typography>
               <Box
-                ml={{ xs: 2, sm: 5 }}
+                ml={{ xs: "2rem" , md:"6.5rem" , sm:"auto" }}
+                mr={{md :"50px"}}
                 sx={{
                   height: '7px',
                   width: '100px',
@@ -64,7 +53,8 @@ export default function About() {
                   lineHeight: 1.7,
                   fontSize: { xs: "16px", sm: "17px" },
                   fontFamily: "sans-serif",
-                  margin: { xs: '0 1rem', sm: '0 5rem' },
+                  margin: { xs: '0 1rem 0 2rem', sm: '0rem 0rem' },
+                  paddingRight:{sm:"0" , xs:"0" , md:"0"}
                 }}
               >
                 I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
