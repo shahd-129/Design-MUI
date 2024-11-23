@@ -19,6 +19,7 @@ export default function Clients() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
+                    //  my:6,
                     overflowX: {sx: "hidden"},
                 }}
             >
@@ -30,9 +31,9 @@ export default function Clients() {
                         fontWeight: "bold",
                         marginTop: 3,
                         // marginBottom: 2,
-                        marginBottom:{sx:"4" , md:"3" , sm:"3"}, 
+                        marginBottom:{sx:"4" , md:"3" , sm:"4"}, 
                         paddingBottom:{sx:"4" , md:"3" , sm:"3"}, 
-                        // fontSize:{sx:'15px'}
+                        fontSize:{sx:'15px'}
                     }}
                 >
                     CLIENTS
@@ -42,7 +43,7 @@ export default function Clients() {
                         height: { xs: "13px", sm: '7px', md: '7px' },
                         width: '100px',
                         backgroundColor: theme.palette.secondary.main,
-                        margin: { xs: "0.5rem", sm: '0.5rem auto', md: '0.5rem auto' },
+                        margin: { xs: "0.5rem", sm: '0.8rem auto', md: '0.5rem auto' },
                     }}
                 />
 
@@ -68,7 +69,7 @@ export default function Clients() {
                 </Grid>
 
             </Box>
-            <Divider sx={{ bgcolor: "#5A8CAE", marginTop: 0.2 , display:{xs:"none" , md:"block"} }} />
+            <Divider sx={{ bgcolor: "#5A8CAE", marginTop: '0.2' , display:{xs:"none" , md:"block"} }} />
         </>
     );
 }

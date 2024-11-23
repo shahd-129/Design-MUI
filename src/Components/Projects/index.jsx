@@ -28,7 +28,7 @@ const projects = [
 
 const Projects = () => {
   const theme = useTheme();
-  return (
+  return (<>
     <section id="projects">
       <Container 
         maxWidth="md" 
@@ -36,6 +36,7 @@ const Projects = () => {
           textAlign: "center", 
           py: 2,
           px: { xs: 0, sm: 2 }, 
+          
         }}
       >
         <Typography
@@ -61,7 +62,7 @@ const Projects = () => {
 
         <Grid 
           container 
-          spacing={{ xs: 0, sm: 3 }} 
+          spacing={{ xs: 0, sm: 3 , md:1 }} 
           sx={{ 
             mt: { xs: 2, sm: 3 },
             width: '100%',
@@ -104,8 +105,10 @@ const Projects = () => {
           ))}
         </Grid>
       </Container>
-      <Clients />
     </section>
+      <Clients />
+      
+      </>
   );
 };
 

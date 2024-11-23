@@ -51,7 +51,6 @@ function ResponsiveAppBar() {
             href="#app-bar-with-responsive-menu"
             sx={{
               display: { xs: 'none', md: 'flex' },
-              // fontFamily: 'monospace',
               fontFamily: theme.typography.fontFamily,
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -141,7 +140,9 @@ function ResponsiveAppBar() {
                 key={page.id}
                 onClick={() => handleScroll(page.id)}
                 sx={{
-                  my: 3,
+                  my:'2rem',
+                  margim:"1rem",
+                  padding:"0.5rem",
                   color: page.label === 'HOME' ? theme.palette.secondary.main : 'white',
                   display: 'block',
                   mx: 1,

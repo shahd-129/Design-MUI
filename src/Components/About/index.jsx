@@ -51,7 +51,7 @@ export default function About() {
                   color: "#3b3a3a",
                   textAlign: 'left',
                   lineHeight: 1.7,
-                  fontSize: { xs: "16px", sm: "17px" },
+                  fontSize: { xs: "16px", sm: "17px" , md:"16px" },
                   margin: { xs: '0 1rem 0 2rem', sm: '0rem' , md:"0 auto" },
                   paddingRight:{sm:"0" , xs:"0" },
                   paddingLeft:{ md:"8.7rem"}
