@@ -24,7 +24,7 @@ export default function Contact() {
       <section id="contact">
         <Box sx={{ margin: '5', padding: '20px' }} position={'relative'}>
           <Typography variant="h3" align="center" sx={{ color: 'inherit', fontWeight: 'bold', margin: 2 }}>
-            Contact
+            CONTACT
           </Typography>
 
           <Box
