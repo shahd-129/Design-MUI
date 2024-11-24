@@ -4,18 +4,15 @@ import React from 'react'
 export default function ServicesCard({ service }) {
     const theme = useTheme()
     return (
-        <Card sx={{ maxWidth: '300px', margin: "auto", boxShadow: 'none' }}>
+        <Card sx={{ boxShadow: 'none' }}>
             <CardMedia
                 component="img"
                 image={service.imageUrl}
                 alt={service.title}
-                sx={{
-                    width: '300px',
-                    height: '225px',
-                    objectFit: "cover",
+                sx={{ objectFit: "cover",
                 }}
             />
-            <CardContent sx={{ background: "#f7f7f7", margin: '0 auto' }}>
+            <CardContent sx={{ bgcolor: "greyBackground.main", margin: '0 auto' }}>
                 <Typography variant="h6" sx={{ fontSize: "22px", color: theme.palette.typography.colorTypography, textAlign: 'left', paddingLeft: '1rem', fontWeight: "bold" , lineHeight:'1.1em' }} mt={2}>
                     {service.title}
                 </Typography>

@@ -30,13 +30,13 @@ const Projects = () => {
   const theme = useTheme();
   return (<>
     <section id="projects">
-      <Container 
-        maxWidth="md" 
-        sx={{ 
-          textAlign: "center", 
+      <Container
+        maxWidth="md"
+        sx={{
+          textAlign: "center",
           py: 2,
-          px: { xs: 0, sm: 2 }, 
-          
+          px: { xs: 0, sm: 2 },
+
         }}
       >
         <Typography
@@ -60,23 +60,23 @@ const Projects = () => {
           }}
         />
 
-        <Grid 
-          container 
-          spacing={{ xs: 0, sm: 3 , md:1 }} 
-          sx={{ 
+        <Grid
+          container
+          spacing={{ xs: 0, sm: 3, md: 1 }}
+          sx={{
             mt: { xs: 2, sm: 3 },
             width: '100%',
             mx: 0
           }}
         >
           {projects.map((project, index) => (
-            <Grid 
-              item 
-              xs={12} 
-              sm={6} 
+            <Grid
+              item
+              xs={12}
+              sm={6}
               key={index}
               sx={{
-                p: { xs: 1, sm: 2 }, 
+                p: { xs: 1, sm: 2 },
                 mb: { xs: 1, sm: 0 }
               }}
             >
@@ -106,9 +106,8 @@ const Projects = () => {
         </Grid>
       </Container>
     </section>
-      <Clients />
-      
-      </>
+    <Clients />
+  </>
   );
 };
 

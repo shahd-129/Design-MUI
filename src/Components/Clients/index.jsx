@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Divider, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 
 import {
@@ -6,23 +6,27 @@ import {
     ClientImage5, ClientImageHover1, ClientImageHover2,
     ClientImageHover3, ClientImageHover4, ClientImageHover5
 } from "../../assets";
+import SectionContainer from 'Components/SectionContainer';
+
+const clients = [
+    { id: 0, src: ClientImage1, hoverSrc: ClientImageHover1 },
+    { id: 1, src: ClientImage2, hoverSrc: ClientImageHover2 },
+    { id: 2, src: ClientImage3, hoverSrc: ClientImageHover3 },
+    { id: 3, src: ClientImage4, hoverSrc: ClientImageHover4 },
+    { id: 4, src: ClientImage5, hoverSrc: ClientImageHover5 }
+]
 
 export default function Clients() {
-  const theme = useTheme()
+    const theme = useTheme()
+
+    const  md = useMediaQuery(theme.breakpoints.only('md')) // true when medium screen size is reached
+    const  downd = useMediaQuery(theme.breakpoints.down('md')) // true when screen size is below medium screen size
+    const upMd = useMediaQuery(theme.breakpoints.up('md')) // true when screen size is above medium screen size
+
+
     return (
-        <>
-            <Box
-                sx={{
-                    background: "#F7F7F7",
-                    width: '100%',
-                    height: '50vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    //  my:6,
-                    overflowX: {sx: "hidden"},
-                }}
-            >
+        <Box bgcolor="greyBackground.main" py={2}>
+            <SectionContainer>
                 <Typography
                     variant='h3'
                     align="center"
@@ -31,9 +35,9 @@ export default function Clients() {
                         fontWeight: "bold",
                         marginTop: 3,
                         // marginBottom: 2,
-                        marginBottom:{sx:"4" , md:"3" , sm:"4"}, 
-                        paddingBottom:{sx:"4" , md:"3" , sm:"3"}, 
-                        fontSize:{sx:'15px'}
+                        marginBottom: { sx: "4", md: "3", sm: "4" },
+                        paddingBottom: { sx: "4", md: "3", sm: "3" },
+                        fontSize: { sx: '15px' }
                     }}
                 >
                     CLIENTS
@@ -47,29 +51,27 @@ export default function Clients() {
                     }}
                 />
 
-                <Grid container spacing={0} justifyContent="center" alignItems="center">
-                    {[{ src: ClientImage1, hoverSrc: ClientImageHover1 }, { src: ClientImage2, hoverSrc: ClientImageHover2 }, { src: ClientImage3, hoverSrc: ClientImageHover3 }, { src: ClientImage4, hoverSrc: ClientImageHover4 }, { src: ClientImage5, hoverSrc: ClientImageHover5 }].map((image, index) => (
-                        <Grid item xs={6} sm={6} md={2} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid container spacing={2} justifyContent="space-between">
+                    {clients.map((client, index) => (
+                        <Grid item xs={client?.id === 2 ? 12 : 6} sm={6} md={2} key={client?.id}>
                             <Box
                                 component='img'
-                                src={image.src}
+                                src={client.src}
                                 alt={`Client ${index + 1}`}
                                 sx={{
                                     width: "80%",
                                     maxWidth: "150px",
                                     transition: "0.3s",
-                                    '&:hover': { content: `url(${image.hoverSrc})` },
+                                    '&:hover': { content: `url(${client.hoverSrc})` },
                                     '@media (max-width:600px)': {
-                                        width: '70%', 
+                                        width: '70%',
                                     }
                                 }}
                             />
                         </Grid>
                     ))}
                 </Grid>
-
-            </Box>
-            <Divider sx={{ bgcolor: "#5A8CAE", marginTop: '0.2' , display:{xs:"none" , md:"block"} }} />
-        </>
+            </SectionContainer>
+        </Box>
     );
 }
