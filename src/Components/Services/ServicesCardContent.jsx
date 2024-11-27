@@ -4,14 +4,12 @@ import React from 'react'
 export default function ServicesCard({ service }) {
     const theme = useTheme()
     return (
-        <Card sx={{ maxWidth: '300px', margin: "auto", boxShadow: 'none' }}>
+        <Card sx={{ boxShadow: 'none' }}>
             <CardMedia
                 component="img"
                 image={service.imageUrl}
                 alt={service.title}
                 sx={{
-                    width: '300px',
-                    height: '225px',
                     objectFit: "cover",
                 }}
             />

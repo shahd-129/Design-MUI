@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  Container,
-  Typography,
-  Box,
-  Grid,
-  Card,
-  CardMedia,
-  useTheme,
-} from "@mui/material";
+import { Grid, Card, CardMedia, Box } from "@mui/material";
 import { ProjectImage } from '../../assets';
 import Clients from "Components/Clients";
+import TitleSection from "../../util/TitleSection";
+import SectionContainer from "Components/Theme/SectionContainer";
 
 const projects = [
   {
@@ -27,88 +21,59 @@ const projects = [
 ];
 
 const Projects = () => {
-  const theme = useTheme();
-  return (<>
-    <section id="projects">
-      <Container 
-        maxWidth="md" 
-        sx={{ 
-          textAlign: "center", 
-          py: 2,
-          px: { xs: 0, sm: 2 }, 
-          
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: "bold",
-            textAlign: { xs: "left", sm: "center" },
-            ml: { xs: "1rem", sm: 0 },
-            fontSize: { xs: "2rem", sm: "3rem" },
-          }}
-          mt={5}
-        >
-          PROJECTS
-        </Typography>
-        <Box
-          sx={{
-            height: { xs: "13px", sm: '7px' },
-            width: '100px',
-            backgroundColor: theme.palette.secondary.main,
-            margin: { xs: "0.5rem 0 0.5rem 1rem", sm: '0.5rem auto' },
-          }}
-        />
-
-        <Grid 
-          container 
-          spacing={{ xs: 0, sm: 3 , md:1 }} 
-          sx={{ 
-            mt: { xs: 2, sm: 3 },
-            width: '100%',
-            mx: 0
-          }}
-        >
-          {projects.map((project, index) => (
-            <Grid 
-              item 
-              xs={12} 
-              sm={6} 
-              key={index}
-              sx={{
-                p: { xs: 1, sm: 2 }, 
-                mb: { xs: 1, sm: 0 }
-              }}
-            >
-              <Card
+  return (
+    <>
+      <Box id="projects">
+        <SectionContainer>
+          <TitleSection title={'PROJECTS'} />
+          <Grid
+            container
+            spacing={{ xs: 0, sm: 3, md: 1 }}
+            sx={{
+              mt: { xs: 2, sm: 3 },
+              width: '100%',
+              mx: 0,
+            }}
+          >
+            {projects.map((project) => (
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                key={project.imageUrl}
                 sx={{
-                  borderRadius: 0,
-                  boxShadow: 'none',
-                  height: '100%',
+                  p: { xs: 1, sm: 2 },
+                  mb: { xs: 1, sm: 0 },
                 }}
               >
-                <CardMedia
-                  component="img"
-                  image={project.imageUrl}
-                  alt={`Project ${index + 1}`}
+                <Card
                   sx={{
-                    width: '100%',
-                    objectFit: "cover",
-                    transition: "transform 0.3s ease",
-                    '&:hover': {
-                      transform: 'scale(1.02)',
-                    },
+                    borderRadius: 0,
+                    boxShadow: 'none',
+                    height: '100%',
                   }}
-                />
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </section>
+                >
+                  <CardMedia
+                    component="img"
+                    image={project.imageUrl}
+                    alt={'Project'}
+                    sx={{
+                      width: '100%',
+                      objectFit: "cover",
+                      transition: "transform 0.3s ease",
+                      '&:hover': {
+                        transform: 'scale(1.02)',
+                      },
+                    }}
+                  />
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </SectionContainer>
+      </Box>
       <Clients />
-      
-      </>
+    </>
   );
 };
 
