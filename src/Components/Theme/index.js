@@ -5,7 +5,10 @@ const Theme = createTheme({
       main: "#1e2d3b",
     },
     secondary: {
-      main: "#edcd1f",
+      main: "#EDCD1F",
+    },
+    background:{
+      main:"#f7f7f7"
     },
   typography: {
     fontFamily:"Source Code Pro  sans-serif",
