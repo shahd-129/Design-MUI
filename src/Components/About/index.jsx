@@ -5,8 +5,8 @@ import SectionContainer from 'Components/Theme/SectionContainer';
 
 export default function About() {
   return (<>
-    <Box id='about' bgcolor="background.main"  mb ={0}
-    mt = {0}>
+    <Box id='about' bgcolor="background.main" mb={0}
+      mt={0}>
       <SectionContainer mlOnly={true}>
         <Grid container>
           <Grid
@@ -16,22 +16,22 @@ export default function About() {
             md={4.5}
           >
             <Box>
-            <Typography variant='h3'
-               sx={{
-                 lineHeight: 1.5,
-                 letterSpacing: '0.05em',
-                 fontWeight: "bold",
-                 mt:5
-               }}>
-               ABOUT
-             </Typography>
-             <Box
-               sx={{
-                 height: '7px',
-                 width: '100px',
-                 backgroundColor: '#edcd1f',
-               }}
-            />
+              <Typography variant='h3'
+                sx={{
+                  lineHeight: 1.5,
+                  letterSpacing: '0.05em',
+                  fontWeight: "bold",
+                  mt: 5
+                }}>
+                ABOUT
+              </Typography>
+              <Box
+                sx={{
+                  height: '7px',
+                  width: '100px',
+                  backgroundColor: '#edcd1f',
+                }}
+              />
               <Typography
                 variant='body1'
                 sx={{
@@ -39,7 +39,7 @@ export default function About() {
                   lineHeight: 1.7,
                   fontSize: { xs: "16px", sm: "17px", md: "16px" },
                   pr: 5,
-                  mt:4
+                  mt: 4
                 }}
               >
                 I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
@@ -47,27 +47,28 @@ export default function About() {
             </Box>
           </Grid>
 
-          <Grid item xs={12} sm={12} md={7.5} sx={{} }>
+          <Grid item xs={12} sm={12} md={7.5}>
             <Box
-             marginLeft= {{ xs: 0, sm: 0 }}
+              marginLeft={{ xs: 0, sm: 0 }}
               component="img"
               src={AboutImage}
               alt="About Image"
               sx={{
                 width: { xs: 'calc(100% + 2rem)', sm: 'calc(100% + 2rem)' },
-                height: '95vh',
+                height: {md:'98vh' , sx:"100%" , sm:"100%"},
+                mt:{xs:"1rem" , md:0},
                 objectFit: 'cover',
                 display: 'block',
-                marginLeft: { xs: '-2rem' , sm:"-2rem" },
+                marginLeft: { xs: '-2rem', sm: "-2rem" },
               }}
-              // ml={0}
+            // ml={0}
             />
           </Grid>
         </Grid>
       </SectionContainer>
     </Box>
-  
-    </>
+
+  </>
   );
 }
 

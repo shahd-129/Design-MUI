@@ -12,21 +12,24 @@ import TitleSection from "../../util/TitleSection";
 import SectionContainer from "Components/Theme/SectionContainer";
 const services = [
   {
-    title: "Preconstruction Planning",
+    lableOne: "Preconstruction",
+    lableTwo: "Planning",
     description:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     imageUrl:
       ServicesImage1
   },
   {
-    title: "Architectural Modelling",
+    lableOne : "Architectural",
+    lableTwo : "Modelling",
     description:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     imageUrl:
       ServicesImage2
   },
   {
-    title: "Construction Management",
+    lableOne: "Construction",
+    lableTwo: "Management",
     description:
       "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.",
     imageUrl: ServicesImage3
@@ -38,7 +41,7 @@ const ServicesSection = () => {
     <Box id="services">
       <SectionContainer>
 
-        <TitleSection title={"SRVICES"} />
+        <TitleSection title={"SRVICES"}  />
         <Grid container spacing={2} my={4} >
           {services.map((service) => (
             <Grid item xs={12} sm={6} md={4} key={service?.title}>

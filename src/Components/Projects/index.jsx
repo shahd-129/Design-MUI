@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Card, CardMedia, Box } from "@mui/material";
 import { ProjectImage } from '../../assets';
-import Clients from "Components/Clients";
+// import Clients from "Components/Clients";
 import TitleSection from "../../util/TitleSection";
 import SectionContainer from "Components/Theme/SectionContainer";
 
@@ -72,7 +72,7 @@ const Projects = () => {
           </Grid>
         </SectionContainer>
       </Box>
-      <Clients />
+      {/* <Clients /> */}
     </>
   );
 };

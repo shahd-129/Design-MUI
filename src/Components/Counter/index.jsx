@@ -19,9 +19,9 @@ export default function Counter() {
           bgcolor: 'secondary.main',
           position: 'relative',
           width: "100%",
-          mt: { xs: 0 , md:0 , sm:0 },
-          pt:2,
-          pb:2
+          mt: { xs: 0, md: 0, sm: 0 },
+          pt: 2,
+          pb: 2
         }}>
 
         <SectionContainer>
@@ -36,7 +36,7 @@ export default function Counter() {
               { value: 206, labelTop: 'Projects', labelBottom: 'Completed' },
               { value: 870, labelTop: 'Contractors', labelBottom: 'Appointed' },
               { value: 26, labelTop: 'Awards', labelBottom: 'Won' },
-            ].map((item) => (
+            ].map((item , index) => (
               <Grid
                 item
                 xs={6}
@@ -44,8 +44,16 @@ export default function Counter() {
                 md={3}
                 sx={{
                   position: 'relative',
-
+                  '&::before': index !== 0 && { 
+                    content: '""',
+                    position: 'absolute',
+                    borderRight: '2px solid #fff',
+                    top: '35%',
+                    height: '50%',
+                    display:{xs:"none" , md:"block" , sm:"none"}                    
+                  },
                 }}
+                key={index}
               >
                 <Typography
                   variant="h4"
@@ -97,22 +105,8 @@ export default function Counter() {
             ))}
           </Grid>
 
-          {[35, 50, 65].map((left) => (
-            <Box
-              key={left}
-              sx={{
-                position: 'absolute',
-                top: '60px',
-                left: { md: `${left}%`, sm: "50%" },
-                width: '1px',
-                height: '30%',
-                background: '#fff',
-                display: { xs: 'none', md: 'block', sm: "none" },
-              }}
-            />))}
-
         </SectionContainer>
-      </Box>
+      </Box >
     </>
   );
 }

@@ -24,8 +24,13 @@ export default function Contact() {
   return (
     <>
       <Box id="contact">
-        <SectionContainer>
-
+        <SectionContainer
+          sx={{
+            padding: 0, 
+            margin: 0,  
+            width: '100%', 
+          }}
+        >
           <Box>
             <TitleSection title={"CONTACT"} />
             <Box
@@ -33,7 +38,7 @@ export default function Contact() {
                 width: "100%",
                 height: "100%",
                 overflow: "hidden",
-                pt:5
+                pt: 5,
               }}
             >
               <iframe
@@ -46,11 +51,23 @@ export default function Contact() {
                 }}
               />
             </Box>
-            <Grid container spacing={8} padding={3}
+            <Grid
+              container
+              padding={3}
+              columnSpacing={10}
               justifyContent="center"
-              // sx={{margin:0}}
             >
-              <Grid item xs={12} sm={6} md={6}  sx={{padding:0 , margin:0}}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                sx={{
+                  padding: 0,
+                  margin: 0,
+                  width: '100%',
+                }}
+              >
                 <Typography variant="h4" sx={{ fontWeight: '600', fontSize: '25px', fontFamily: 'sans-serif', marginBottom: 1 }}>
                   Inquiries
                 </Typography>
@@ -61,10 +78,11 @@ export default function Contact() {
                     color: '#3b3a3a',
                   }}
                 >
-                  For any inquiries, questions or commendations, please call: 123-456-7890 or fill out the following form
+                  For any inquiries, questions or commendations, please 
+                  <br />
+                  call: 123-456-7890 or fill out the following form
                 </Typography>
-                <Box >
-
+                <Box>
                   <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
                     Contact Us
                   </Typography>
@@ -81,7 +99,6 @@ export default function Contact() {
                       onBlur={() => handleBlur('firstName')}
                       sx={{
                         background: '#F7F7F7',
-                        // width: { xs: '100%', sm: '100%', md: '100%' },
                       }}
                       helperText={warnings.firstName}
                       error={!!warnings.firstName}
@@ -94,7 +111,6 @@ export default function Contact() {
                       onBlur={() => handleBlur('lastName')}
                       sx={{
                         background: '#F7F7F7',
-                      
                       }}
                       helperText={warnings.lastName}
                       error={!!warnings.lastName}
@@ -107,7 +123,6 @@ export default function Contact() {
                       size="small"
                       sx={{
                         background: '#F7F7F7',
-                       
                       }}
                       helperText={warnings.email}
                       error={!!warnings.email}
@@ -120,7 +135,6 @@ export default function Contact() {
                       onBlur={() => handleBlur('subject')}
                       sx={{
                         background: '#F7F7F7',
-                       
                       }}
                       helperText={warnings.subject}
                       error={!!warnings.subject}
@@ -160,10 +174,18 @@ export default function Contact() {
                     </Typography>
                   </Box>
                 </Box>
-
               </Grid>
 
-              <Grid item xs={12} sm={6} md={6} spacing={2}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                sx={{
+                  padding: 0,
+                  margin: 0,
+                }}
+              >
                 <Typography variant="h4" sx={{ fontWeight: '600', fontSize: '25px', fontFamily: 'sans-serif', marginBottom: 1 }}>
                   Head Office
                 </Typography>
@@ -195,7 +217,15 @@ export default function Contact() {
                 />
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Get a quote: 123-456-7890</Typography>
 
-                <Box sx={{ display: 'flex', justifyContent: { xs: "left", md: 'center' }, alignItems: 'center', padding: '2rem auto', marginTop: '1rem' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: { xs: "left", md: 'center' },
+                    alignItems: 'center',
+                    padding: '2rem auto',
+                    marginTop: '1rem',
+                  }}
+                >
                   <FacebookRoundedIcon sx={{ width: 35, height: 35, borderRadius: '50%', marginRight: '1rem' }} />
                   <Avatar sx={{ width: 30, height: 30, borderRadius: '50%', background: 'black', color: 'white' }}>
                     <LinkedInIcon />

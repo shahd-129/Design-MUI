@@ -1,4 +1,4 @@
-import { Box, Divider, Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import React from 'react';
 
 import {
@@ -19,36 +19,54 @@ const clients = [
 
 export default function Clients() {
   return (
-    <>
-    <Box bgcolor="background.main" sx={{
-      my: { md: 10 },
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      pt:2,
-      pb:2
-    }} py={1}>
+    <Box
+      bgcolor="background.main"
+      sx={{
+        my: { md: 10, sm: 5, xs: 3 },
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        pt: 2,
+        pb: 2,
+      }}
+    >
       <SectionContainer>
-        <TitleSection 
-          title={"CLIENTS"} 
-          typographyProps={{ sx: { textAlign: { xs: 'center' } } }}  
-          boxProps={{ sx: { margin: { xs: "0.5rem", sm: '0.5rem auto' }, marginLeft: { xs: "5rem" } } }} 
+        <TitleSection
+          title={"CLIENTS"}
+          typographyProps={{ sx: { textAlign: 'center' } }}
+          boxProps={{
+            sx: {
+              margin: { xs: "0.5rem auto", sm: "0.5rem auto", md: "0.5rem auto" },
+
+            },
+          }}
         />
-        <Grid container spacing={2} justifyContent={'space-between'}>
+
+        <Grid
+          container
+          spacing={{ xs: 1, sm: 2, md: 3 }}
+          justifyContent="space-between"
+        >
           {clients.map((client, index) => (
-            <Grid item xs={client?.id === 2 ? 12 : 6} sm={client?.id === 2 ? 12 : 6} md={2} key={client?.id} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid
+              item
+              xs={client?.id === 2 ? 12 : 6}
+              sm={client?.id === 2 ? 12 : 6}
+              md={2}
+              key={client?.id}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
               <Box
-                component='img'
+                component="img"
                 src={client.src}
                 alt={`Client ${index + 1}`}
                 sx={{
-                  width: "100%" ,
                   transition: "0.3s",
-
+                  height: '70%',
                   '&:hover': { content: `url(${client.hoverSrc})` },
-                  '@media (max-width:600px)': {
-                    width: '70%',
-                  }
                 }}
               />
             </Grid>
@@ -56,6 +74,5 @@ export default function Clients() {
         </Grid>
       </SectionContainer>
     </Box>
-      </>
   );
 }

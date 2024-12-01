@@ -26,7 +26,6 @@ export default function TitleSection({title , typographyProps = {}, boxProps = {
             width: '100px',
             bgcolor: 'secondary.main',
             margin: { xs: "0.5rem", sm: '0.5rem auto', md: '0.5rem auto' },
-            ml:{ xs: "0.2rem"},
             ...boxProps.sx
             
           }}
